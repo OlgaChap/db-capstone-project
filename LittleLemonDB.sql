@@ -122,3 +122,24 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+CREATE VIEW OrdersView AS
+SELECT orders.OrderID, orders.Quantity, orders.TotalCost
+FROM orders
+WHERE orders.Quantity > 2;
+
+CREATE VIEW OrdersView2 AS
+SELECT customer.CustomerID, customer.FullName, orders.OrderID, orders.TotalCost
+FROM customer INNER JOIN orders
+WHERE orders.TotalCost > 150
+ORDER BY orders.TotalCost DESC;
+
+CREATE PROCEDURE GetMaxQuantity()
+
+SELECT MAX(orders.Quantity)
+FROM orders;
+
+PREPARE GetOrderDetail FROM @order;
+
+CREATE PROCEDURE CancelOrder(in OrderID INT)
+DELETE FROM orders;
