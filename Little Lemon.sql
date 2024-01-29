@@ -1,22 +1,14 @@
--- MySQL Workbench Forward Engineering
+
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
--- Schema LittleLemonDB
--- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema LittleLemonDB
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `LittleLemonDB` DEFAULT CHARACTER SET utf8 ;
 USE `LittleLemonDB` ;
 
--- -----------------------------------------------------
--- Table `LittleLemonDB`.`Booking`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Booking` (
   `BookingID` INT NOT NULL,
   `Date` DATETIME NOT NULL,
@@ -25,9 +17,7 @@ CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Booking` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `LittleLemonDB`.`Customer`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Customer` (
   `CustomerID` INT NOT NULL,
   `FullName` VARCHAR(255) NOT NULL,
@@ -37,9 +27,7 @@ CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Customer` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `LittleLemonDB`.`Menu`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Menu` (
   `MenuID` INT NOT NULL,
   `Name` VARCHAR(45) NULL,
@@ -48,9 +36,6 @@ CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Menu` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `LittleLemonDB`.`DeliveryStatus`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`DeliveryStatus` (
   `DeliveryID` INT NOT NULL,
   `DeliveryDate` DATETIME NOT NULL,
@@ -58,9 +43,7 @@ CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`DeliveryStatus` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `LittleLemonDB`.`Orders`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Orders` (
   `OrderID` INT NOT NULL,
   `Date` DATETIME NOT NULL,
@@ -98,9 +81,7 @@ CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Orders` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `LittleLemonDB`.`Staff`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Staff` (
   `StaffID` INT NOT NULL,
   `FullName` VARCHAR(255) NOT NULL,
